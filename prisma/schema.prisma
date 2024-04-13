@@ -8,8 +8,7 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model ResponseData_Meditacija
- {
+model ResponseData_Meditacija {
   id            Int @id @default(autoincrement())
   createdAt     DateTime @default(now()) @db.Timestamp(6)
   participantId String
