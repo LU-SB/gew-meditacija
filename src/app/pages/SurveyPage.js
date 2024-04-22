@@ -4,8 +4,6 @@ import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import { themeJson } from "../utils/survey_theme";
-
-
 // Your CSS as text
 var styles = `
     .sd-rating__item  { 
@@ -25,17 +23,13 @@ var styles = `
 
 `
 
-var styleSheet = document.createElement("style")
-styleSheet.innerText = styles
-document.head.appendChild(styleSheet)
-
 const surveyJson = {
   pages: [
     {
       name: "page1",
       title: "Lūdzu sniedziet atbildes par sevi!",
       elements: [
-          {
+        {
           name: "response_time",
           title: "Emocijas atzīmēju:",
           isRequired: true,
@@ -66,24 +60,6 @@ const surveyJson = {
           isRequired: true,
           choices: ["Sieviete", "Vīrietis"],
         },
-    /*    {
-          name: "dark_light",
-          type: "text",
-          title: "Novērtējiet telpu, kurā veicāt meditāciju!",
-          inputType: "range",
-          min: 1,
-          max: 7,
-          step: 1,
-          isRequired: true,
-          rateDescriptionLocation: "bottom",
-          minRateDescription: "Tumša",
-          maxRateDescription: "Gaiša",
-          description: "Tumša(1) - Gaiša(7)",
-          isMinMaxType: true,
-          defaultValue:undefined,
-        
-        },
-*/
         {
           visibleIf:
             "{response_time} = 'Pēc meditācijas'",
@@ -111,7 +87,6 @@ const surveyJson = {
           rateMax: 7,
           displayMode: "buttons",
           rateDescriptionLocation: "bottom",
-
         },
         {
           visibleIf:
@@ -160,10 +135,10 @@ const surveyJson = {
             "{response_time} = 'Pēc meditācijas'",
           type: "rating",
           name: "nature",
-          title: "Dabas klātbūtne:",
+          title: " ",
           isRequired: true,
-          minRateDescription: "Nav",
-          maxRateDescription: "Ir",
+          minRateDescription: "Daba nav klātesoša",
+          maxRateDescription: "Daba ir klātesoša",
           rateCount: 7,
           rateMax: 7,
           displayMode: "buttons",
@@ -285,7 +260,7 @@ const surveyJson = {
           title: "Cik cilvēki piedalījās nodarbībā:",
           type: "radiogroup",
           isRequired: true,
-          choices: ["viens", "grupa līdz 10", "10-20","vairāk nekā 20"],
+          choices: ["viens", "grupa līdz 10", "10-20", "20'+'"],
         },
         {
           visibleIf:
@@ -306,10 +281,10 @@ const surveyJson = {
             "{response_time} = 'Pēc meditācijas'",
           type: "rating",
           name: "rating_easy_to_focus",
-          title: "Koncentrēties bija:",
+          title: " ",
           isRequired: true,
-          minRateDescription: "Grūti",
-          maxRateDescription: "Viegli",
+          minRateDescription: "Grūti koncentrēties",
+          maxRateDescription: "Viegli koncentrēties",
           rateCount: 7,
           rateMax: 7,
           displayMode: "buttons",
@@ -349,9 +324,7 @@ const surveyJson = {
           name: "comments",
           title: "Radušies papildus komentāri:",
           type: "text",
-          startWithNewLine:true,
           isRequired: false,
-          textUpdateMode: "onTyping"
         },
       ],
     },
