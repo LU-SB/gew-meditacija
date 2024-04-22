@@ -243,7 +243,7 @@ const surveyJson = {
           title: "Cik cilvēki piedalījās nodarbībā:",
           type: "radiogroup",
           isRequired: true,
-          choices: ["viens", "grupa līdz 10", "10-20", "20'+'"],
+          choices: ["viens", "grupa līdz 10", "10-20", "vairāk nekā 20"],
         },
         {
           visibleIf:
