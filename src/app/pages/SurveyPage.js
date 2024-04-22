@@ -22,6 +22,10 @@ var styles = `
     }
 
 `
+var styleSheet = document.createElement("style")
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)
+
 
 const surveyJson = {
   pages: [
