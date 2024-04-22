@@ -353,6 +353,6 @@ p {
 
 @media (prefers-color-scheme: dark) {
   text {
-    color:#535353
+    color:#535353 !important;
   }
 }
