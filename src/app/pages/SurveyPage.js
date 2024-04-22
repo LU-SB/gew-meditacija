@@ -4,27 +4,6 @@ import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import { themeJson } from "../utils/survey_theme";
-// Your CSS as text
-var styles = `
-    .sd-rating__item  { 
-        width: 30px !important;
-        min-width:30px !important;
-        height: 30px !important;
-        min-height:30px !important; 
-        background-color: lightgray;
-    }
-    .sd-rating__item-text .sd-rating__max-text{
-      font-size:11pt;
-    }
-    .sd-input .sd-text .sd-text__content .sd-question__contentinput:focus {
-      border-color: #00aaff; /* Change the border color */
-      box-shadow: 0 0 3px #00aaff; /* Add a box shadow */
-    }
-
-`
-var styleSheet = document.createElement("style")
-styleSheet.innerText = styles
-document.head.appendChild(styleSheet)
 
 
 const surveyJson = {
