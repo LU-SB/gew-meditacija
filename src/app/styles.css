@@ -3,9 +3,9 @@
   --white: #fff;
   --black: #000000;
   --red: #535353;
-
   --default: #d6d6d6;
   --selected: #888888;
+  color-scheme: light only;
 }
 
 .container {
