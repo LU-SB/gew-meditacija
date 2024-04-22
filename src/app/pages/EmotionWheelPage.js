@@ -3,6 +3,11 @@ import clsx from "clsx";
 import EmotionActions from "../components/EmotionActions";
 import EmotionWheel from "../components/EmotionWheel";
 
+var meta = document.createElement('meta');
+meta.name="color-scheme";
+meta.content="light";
+document.getElementsByTagName('head')[0].appendChild(meta);
+
 export default function EmotionWheelPage({
   setPage,
   selectedItems,
