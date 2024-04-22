@@ -5,13 +5,37 @@ import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import { themeJson } from "../utils/survey_theme";
 
+
+// Your CSS as text
+var styles = `
+    .sd-rating__item  { 
+        width: 30px !important;
+        min-width:30px !important;
+        height: 30px !important;
+        min-height:30px !important; 
+        background-color: lightgray;
+    }
+    .sd-rating__item-text .sd-rating__max-text{
+      font-size:11pt;
+    }
+    .sd-input .sd-text .sd-text__content .sd-question__contentinput:focus {
+      border-color: #00aaff; /* Change the border color */
+      box-shadow: 0 0 3px #00aaff; /* Add a box shadow */
+    }
+
+`
+
+var styleSheet = document.createElement("style")
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)
+
 const surveyJson = {
   pages: [
     {
       name: "page1",
       title: "Lūdzu sniedziet atbildes par sevi!",
       elements: [
-        {
+          {
           name: "response_time",
           title: "Emocijas atzīmēju:",
           isRequired: true,
@@ -42,6 +66,24 @@ const surveyJson = {
           isRequired: true,
           choices: ["Sieviete", "Vīrietis"],
         },
+    /*    {
+          name: "dark_light",
+          type: "text",
+          title: "Novērtējiet telpu, kurā veicāt meditāciju!",
+          inputType: "range",
+          min: 1,
+          max: 7,
+          step: 1,
+          isRequired: true,
+          rateDescriptionLocation: "bottom",
+          minRateDescription: "Tumša",
+          maxRateDescription: "Gaiša",
+          description: "Tumša(1) - Gaiša(7)",
+          isMinMaxType: true,
+          defaultValue:undefined,
+        
+        },
+*/
         {
           visibleIf:
             "{response_time} = 'Pēc meditācijas'",
@@ -69,6 +111,7 @@ const surveyJson = {
           rateMax: 7,
           displayMode: "buttons",
           rateDescriptionLocation: "bottom",
+
         },
         {
           visibleIf:
@@ -117,10 +160,10 @@ const surveyJson = {
             "{response_time} = 'Pēc meditācijas'",
           type: "rating",
           name: "nature",
-          title: " ",
+          title: "Dabas klātbūtne:",
           isRequired: true,
-          minRateDescription: "Daba nav klātesoša",
-          maxRateDescription: "Daba ir klātesoša",
+          minRateDescription: "Nav",
+          maxRateDescription: "Ir",
           rateCount: 7,
           rateMax: 7,
           displayMode: "buttons",
@@ -242,7 +285,7 @@ const surveyJson = {
           title: "Cik cilvēki piedalījās nodarbībā:",
           type: "radiogroup",
           isRequired: true,
-          choices: ["viens", "grupa līdz 10", "10-20", "20'+'"],
+          choices: ["viens", "grupa līdz 10", "10-20","vairāk nekā 20"],
         },
         {
           visibleIf:
@@ -263,10 +306,10 @@ const surveyJson = {
             "{response_time} = 'Pēc meditācijas'",
           type: "rating",
           name: "rating_easy_to_focus",
-          title: " ",
+          title: "Koncentrēties bija:",
           isRequired: true,
-          minRateDescription: "Grūti koncentrēties",
-          maxRateDescription: "Viegli koncentrēties",
+          minRateDescription: "Grūti",
+          maxRateDescription: "Viegli",
           rateCount: 7,
           rateMax: 7,
           displayMode: "buttons",
@@ -306,7 +349,9 @@ const surveyJson = {
           name: "comments",
           title: "Radušies papildus komentāri:",
           type: "text",
+          startWithNewLine:true,
           isRequired: false,
+          textUpdateMode: "onTyping"
         },
       ],
     },
