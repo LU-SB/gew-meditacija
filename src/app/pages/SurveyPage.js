@@ -117,20 +117,6 @@ const surveyJson = {
           visibleIf:
             "{response_time} = 'Pēc meditācijas'",
           type: "rating",
-          name: "nature_no_nature",
-          title: "Dabas klātbūtne",
-          isRequired: true,
-          minRateDescription: "Nav",
-          maxRateDescription: "Ir",
-          rateCount: 7,
-          rateMax: 7,
-          displayMode: "buttons",
-          rateDescriptionLocation: "bottom",
-        },
-        {
-          visibleIf:
-            "{response_time} = 'Pēc meditācijas'",
-          type: "rating",
           name: "narrow_wide",
           title: " ",
           isRequired: true,
@@ -184,6 +170,20 @@ const surveyJson = {
           rateDescriptionLocation: "bottom",
         },
         {
+          visibleIf:
+            "{response_time} = 'Pēc meditācijas'",
+          type: "rating",
+          name: "nature_no_nature",
+          title: "Dabas klātbūtne",
+          isRequired: true,
+          minRateDescription: "Nav",
+          maxRateDescription: "Ir",
+          rateCount: 7,
+          rateMax: 7,
+          displayMode: "buttons",
+          rateDescriptionLocation: "bottom",
+        },
+        {
           visibleIf: "{response_time} = 'Pēc meditācijas'",
           type: "html",
           html: "<p>Atzīmējiet visu, kas atbilst telpai, kurā meditējāt!</p>"
@@ -211,7 +211,7 @@ const surveyJson = {
           title: "Telpā dominējošā krāsa:",
           isRequired: true,
           type: "checkbox",
-          choices: ["balta", "zaļa", "dzeltena", "bēša", "brūna", "sarkana", "zila",  "raibs"],
+          choices: ["balta", "zaļa", "dzeltena", "bēša", "brūna", "sarkana", "zila",  "raiba"],
           showOtherItem: true,
           otherPlaceholder: {
             default: "",
@@ -259,20 +259,7 @@ const surveyJson = {
           displayMode: "buttons",
           rateDescriptionLocation: "bottom",
         },
-        {
-          visibleIf:
-            "{response_time} = 'Pēc meditācijas'",
-          type: "rating",
-          name: "rating_focus_easy_hard",
-          title: "Koncentrēties bija:",
-          isRequired: true,
-          minRateDescription: "Grūti",
-          maxRateDescription: "Viegli",
-          rateCount: 7,
-          rateMax: 7,
-          displayMode: "buttons",
-          rateDescriptionLocation: "bottom",
-        },
+        
         {
           visibleIf:
             "{response_time} = 'Pēc meditācijas'",
@@ -296,6 +283,20 @@ const surveyJson = {
           isRequired: true,
           minRateDescription: "Neizdevusies",
           maxRateDescription: "Izdevusies",
+          rateCount: 7,
+          rateMax: 7,
+          displayMode: "buttons",
+          rateDescriptionLocation: "bottom",
+        },
+        {
+          visibleIf:
+            "{response_time} = 'Pēc meditācijas'",
+          type: "rating",
+          name: "rating_focus_easy_hard",
+          title: "Koncentrēties bija:",
+          isRequired: true,
+          minRateDescription: "Grūti",
+          maxRateDescription: "Viegli",
           rateCount: 7,
           rateMax: 7,
           displayMode: "buttons",
