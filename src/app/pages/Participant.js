@@ -46,6 +46,7 @@ export default function Participant({
     <div className="main">
       <div className="participant-container">
         <p>Dalībnieka kods</p>
+        <p style={{ opacity: 0.5, fontStyle: 'italic' }}>Dzimtās pilsētas pirmie 2 burti, sava tel.nr. pēdējie 2 cipari, uzvārda pirmie 2 burti.</p>
         <input
           className="text-input"
           type="text"
